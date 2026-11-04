@@ -44,10 +44,10 @@ The state of $N$ vortices is a $4N \times 1$ vector `[x; y; X; Y]`:
 The equations of motion are Hamilton's equations for the energy $H$:
 
 $$
-\kappa_i J_i^2 \frac{dx_i}{dt} = \frac{\partial H}{\partial y_i}, \qquad
-\kappa_i J_i^2 \frac{dy_i}{dt} = -\frac{\partial H}{\partial x_i}, \qquad
-\kappa_i \varepsilon_i \frac{dX_i}{dt} = \frac{\partial H}{\partial Y_i}, \qquad
-\kappa_i \varepsilon_i \frac{dY_i}{dt} = -\frac{\partial H}{\partial X_i},
+\frac{dx_i}{dt} = \frac{1}{\kappa_i J_i^2} \frac{\partial H}{\partial y_i}, \qquad
+\frac{dy_i}{dt} = -\frac{1}{\kappa_i J_i^2} \frac{\partial H}{\partial x_i}, \qquad
+\varepsilon_i \frac{dX_i}{dt} = \frac{1}{\kappa_i} \frac{\partial H}{\partial Y_i}, \qquad
+\varepsilon_i \frac{dY_i}{dt} = -\frac{1}{\kappa_i} \frac{\partial H}{\partial X_i},
 $$
 
 with $J_i = |F'(Z_i)|$ in the bounded model and $J_i = 1$ in the doubly
