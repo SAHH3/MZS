@@ -93,7 +93,7 @@ You can use this code for a domain of your own choosing, so long as you have a c
 
 ### Output and restarting
 
-The state, energy and (for the disc) angular momentum after every time step
+The state, energy and (for the circle) angular momentum after every time step
 `dt` are appended to a NetCDF file. The file is written in the folder *above*
 the script's folder, with the script's folder name as a prefix:
 
@@ -115,27 +115,26 @@ A run stops early once any vortex becomes too elongated:
 - $|X|^2 = 25$, an aspect ratio of about 27 (`ElongationEvent2.m`), in the
   gap runs.
 
+The first corresponds to Love's criterion for instability. The second is made larger in order to see the dynamics for a longer time.
+
 The plots at the end of each script are switched on and off with
 `if 1==1` / `if 1==0`. The movie options save `Vortices.mp4` in the current
 folder.
 
 ### Contour-dynamics comparison
 
-`Contour_Dynamics_and_MZS.m` reads a contour-dynamics simulation of the same
-vortex patch from a text file `fort.11` in the current folder. **The
-contour-dynamics code that produces `fort.11` is not part of this
-repository.**
+`Contour_Dynamics_and_MZS.m` reads a contour-dynamics simulation of the same vortex patch from a text file `fort.11` in the current folder. **The contour-dynamics code that produces `fort.11` is obtained from the Fortran code in the folder `Contour Dynamics of Vortex Patch`.** This is obtained by entering `f95 patch.f90`, then `./a.out`, which prompts you to enter the necessary parameters. Then, enter `make dyn`, followed by `./dyn`. This gives you the `fort.11` file, from which you can plot, either using `mkmovie_v7.m`, which plots it on its own, or using `Contour_Dynamics_and_MZS.m`, as a comparison with the MZS.
 
 The script asks for plot settings at the keyboard. It saves each frame as a
 PNG in `figfiles/` and can also save a movie, `CD & MZS.mp4`. It then plots
 time series of the centroid, aspect ratio and rotation rate from both models.
-It assumes that frame $k$ of `fort.11` is at the same time as MZS step $k$.
+It assumes that frame $k$ of `fort.11` is at the same time as MZS step $k$, which it is, due to the way the circulations and vorticities have been set.
 
 ## Conformal maps
 
 | Map | $z = F(Z)$ | Parameters |
 |---|---|---|
-| Heart | $\dfrac{a\,Z}{(1 - q^2 Z^2)(1 - i g Z)}$ | `domain_var = [q; g]`. $a$ = `alpha_heart(q, g, pi)` makes the domain's area $\pi$. `q = g = 0` gives the unit disc. |
+| Heart | $\dfrac{a\,Z}{(1 - q^2 Z^2)(1 - i g Z)}$ | `domain_var = [q; g]`. $a$ = `alpha_heart(q, g, pi)` makes the domain's area $\pi$. `q = g = 0` gives the unit circle, and `g = 0` gives the Neumann oval. |
 | Gap | $\dfrac{2iZ}{Z^2 - 1}$ | None. The walls are $x \le -1$ and $x \ge 1$ on the real axis. The `domain_var` argument is accepted but not used. |
 
 Random initial positions in the heart (`set_ic_bounded_MZS.m`,
@@ -148,3 +147,4 @@ Heart folder. `set_ic_boundedL_MZS.m` is for the unit disc only.
   and `fontsize` (R2022a).
 - No toolboxes. `ode113`, the NetCDF functions and `VideoWriter` are all part
   of base MATLAB.
+- Something to run the Fortran code.
