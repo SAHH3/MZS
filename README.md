@@ -5,11 +5,13 @@ vortex is a uniform elliptical patch, described by its centre, its aspect ratio
 and its orientation, and the model evolves these under the vortices' mutual
 interaction. Three geometries are included:
 
-- **Bounded domains** given by a conformal map of the unit disc: a
-  heart-shaped family that includes the disc itself.
+- **Bounded domains**: given by a conformal map of the unit disc: a
+  heart-shaped family that includes the disc itself, as well as the Neumann oval.
 - **The gap**: the plane with two walls along the real axis, leaving a gap
   between them.
-- **The doubly periodic domain** $[0, 2\pi)^2$.
+- **The doubly periodic domain**: $[0, 2\pi)^2$.
+
+Fortran code is also available for Contour Dynamics comparisons.
 
 ## Folder layout
 
