@@ -77,7 +77,7 @@ The parameters are set at the top of each script.
 
 | Script | Folder | Domain | What it does |
 |---|---|---|---|
-| `main_bounded_MZS.m` | Bounded | Heart (`q`, `g`); `q = g = 0` is the unit disc | $N$ vortices from random initial positions with a given energy (and, for the disc, angular momentum) |
+| `main_bounded_MZS.m` | Bounded | Heart (`q`, `g`); `q = g = 0` is the unit circle, `g = 0` is the Neumann oval | $N$ vortices from random initial positions with a given energy (and, for the disc, angular momentum) |
 | `main_gap_MZS.m` | Bounded | Gap | One vortex starting above the wall, moving towards the gap |
 | `Contour_Dynamics_and_MZS.m` | Bounded | Gap | As `main_gap_MZS.m`, then compares the MZS vortex with a contour-dynamics simulation (see below) |
 | `main_doubly_MZS.m` | Doubly Periodic | $[0, 2\pi)^2$ | $N$ vortices, half positive and half negative, from random positions with a given energy |
