@@ -1,12 +1,12 @@
 function a = a(xy, xyp)
-%A  The image-vortex factor |1 - Z conj(Z')|^2 for the unit disc, real form.
+%A  The image-vortex factor |1 - Z conj(Z')|^2 for the unit circle, real form.
 %
 %   a = a(xy, xyp)
 %
 %     a = |1 - Z conj(Z')|^2 = 1 - 2 (x x' + y y') + |Z|^2 |Z'|^2,
 %     Z = x + i y,  Z' = x' + i y'
 %
-%   Appears in the unit-disc Green's function (GPV.m) and its Robin
+%   Appears in the unit-circle Green's function (GPV.m) and its Robin
 %   function (g.m). Same quantity as a_complex.m, but from real coordinates.
 %
 %   xy   [x; y] of length 2N (image-plane positions)

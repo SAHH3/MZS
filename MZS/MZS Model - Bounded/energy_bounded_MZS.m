@@ -1,11 +1,11 @@
 function H = energy_bounded_MZS(~, xyvor, XY, eps, parvec, varargin)
 %ENERGY_BOUNDED_MZS  Hamiltonian (energy) of N elliptical vortices (MZS model)
-%                    in a bounded domain given by a conformal map of the unit disc.
+%                    in a bounded domain given by a conformal map of the unit circle.
 %
 %   H     = energy_bounded_MZS(t, xyvor, XY, eps, parvec)
 %   Hlist = energy_bounded_MZS(t, xyvor, XY, eps, parvec, 1)
 %
-%   Positions are image-plane (unit-disc) positions Z_i = x_i + i y_i; the
+%   Positions are image-plane (unit-circle) positions Z_i = x_i + i y_i; the
 %   physical positions are F(Z_i), with F the conformal map (heart_map.m or
 %   gap_map.m, whichever Conformal folder is on the path). Each vortex is an
 %   ellipse of aspect ratio lambda_i and orientation phi_i, stored as

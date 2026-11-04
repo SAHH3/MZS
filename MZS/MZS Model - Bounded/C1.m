@@ -8,7 +8,7 @@ function C1 = C1(z, domain_var)
 %
 %   The free-space part of the Green's function in the image plane differs
 %   from the physical-plane log|w - w'|; this is the leftover second
-%   derivative at the vortex itself. Zero for the unit disc. Gives the h7
+%   derivative at the vortex itself. Zero for the unit circle. Gives the h7
 %   term of energy_bounded_MZS.m.
 %
 %   z           image-plane position(s) Z

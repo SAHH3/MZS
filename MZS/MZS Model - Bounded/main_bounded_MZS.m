@@ -3,11 +3,11 @@
 % MAIN_BOUNDED_MZS: script for bounded MZS code
 %
 % Integrates N elliptical vortices (MZS moment model) in a bounded domain
-% given by a conformal map F of the unit disc: here the 'heart' map from the
-% Conformal Heart folder, which with q = g = 0 is the unit disc itself.
+% given by a conformal map F of the unit circle: here the 'heart' map from the
+% Conformal Heart folder, which with q = g = 0 is the unit circle itself.
 %
 % State vector (4N x 1): [x; y; X; Y]
-%   x + i y  image-plane (unit-disc) position Z of each vortex centre;
+%   x + i y  image-plane (unit-circle) position Z of each vortex centre;
 %            the physical position is F(Z) (heart_map.m)
 %   X + i Y  shape, (sqrt(lambda) - 1/sqrt(lambda)) exp(2 i phi), for an
 %            ellipse of aspect ratio lambda and orientation phi, with
@@ -26,7 +26,7 @@
 %rng('shuffle')                             %random number shuffle
 rng(0)
 addpath('../Conformal Heart/');             %path to select heart
-q = 0.8; g = 0; domain_var = [q; g];        %heart domain parameters (q = g = 0: unit disc)
+q = 0.8; g = 0; domain_var = [q; g];        %heart domain parameters (q = g = 0: unit circle)
 dt = 0.01;                                  %time interval length
 TEND = 2500;                                %number of time steps (run length TEND*dt)
 N = 4; NP = N/2; NM = N-NP;                %vortex number, no. +ve, no.-ve
@@ -52,7 +52,7 @@ options=odeset('RelTol',delta2, 'AbsTol',delta2, 'Events',@ElongationEvent); %op
 %%%% set up netcdf output %%%%%%%%%%%%%%%%
 
 % variables in the file: xyXYvar (state after each step, 4N x steps),
-% evals (energy after each step) and, for the unit disc, lvals (angular momentum)
+% evals (energy after each step) and, for the unit circle, lvals (angular momentum)
 flname = ' - file.nc';
 outname=strcat(pwd,flname);                 %i.e. '<this folder's path> - file.nc'
 
@@ -70,7 +70,7 @@ if exist(outname,'file')==0
     eval = 0; eshell = 20;
 
     if g + q == 0
-        % unit disc: angular momentum L is also conserved, so fix it too
+        % unit circle: angular momentum L is also conserved, so fix it too
         nccreate(outname,'lvals','Dimensions',{'list' Inf}, ...
                'Format','classic');   %if ang mom
         %lval=sqrt(N/48); lshell=0.01*sqrt(N); %sigma_l=sqrt(N/48)

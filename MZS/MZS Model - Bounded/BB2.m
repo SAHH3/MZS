@@ -9,7 +9,7 @@ function BB2 = BB2(z, zp, domain_var)
 %           / ( (1 - conj(Z) Z') F'(Z')^2 )
 %
 %   The image counterpart of BB1.m (Re[-log(1 - conj(Z) Z')] is the image
-%   term of the disc Green's function, written so it is analytic in Z').
+%   term of the unit-circle Green's function, written so it is analytic in Z').
 %   BB2(Z, Z) is the strain a vortex feels from its own image (gQX0.m).
 %
 %   z           image-plane field point(s) Z

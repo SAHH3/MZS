@@ -1,11 +1,11 @@
 function [bigz]=xyvors(nvor,domain_var)
 %XYVORS  nvor random positions, uniformly distributed over the physical
-%        heart domain, returned in image-plane (unit-disc) coordinates.
+%        heart domain, returned in image-plane (unit-circle) coordinates.
 %
 %   bigz = xyvors(nvor, domain_var)
 %
 %   Draws 4*nvor points uniformly in a box slightly larger than the heart,
-%   maps them back to the unit disc with inverse_map.m (which drops the
+%   maps them back to the unit circle with inverse_map.m (which drops the
 %   points outside the heart), and keeps nvor of them at random. Uniform in
 %   the physical plane means NOT uniform in the image plane.
 %   Errors if fewer than nvor of the 4*nvor points land inside the heart.

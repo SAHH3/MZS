@@ -1,5 +1,5 @@
 function [ bigz ] = inverse_map( z, domain_var )
-%INVERSE_MAP  Inverse of the 'heart' conformal map (physical heart -> unit disc).
+%INVERSE_MAP  Inverse of the 'heart' conformal map (physical heart -> unit circle).
 %
 %   bigz = inverse_map(z, domain_var)
 %
@@ -8,10 +8,10 @@ function [ bigz ] = inverse_map( z, domain_var )
 %   formed and only those with |Z| < 1 are kept.
 %
 %   The input z may contain points outside the heart (xyvors.m samples a box
-%   around it): those have no root inside the disc and are simply dropped, so
+%   around it): those have no root inside the unit circle and are simply dropped, so
 %   bigz can be SHORTER than z, and its entries no longer line up with z.
 %
-%   Not valid for the unit disc itself (q = g = 0), where it divides by zero.
+%   Not valid for the unit circle itself (q = g = 0), where it divides by zero.
 %
 %   z           physical position(s), row vector
 %   domain_var  [q, g], the heart shape parameters
@@ -34,7 +34,7 @@ else     %cubic replaced by quadratic for g=0: q^2 z Z^2 + a Z - z = 0
 
 end
 
-% keep only the roots that lie inside the unit disc
+% keep only the roots that lie inside the unit circle
 bigz=bigzall(abs(bigzall)<1);
 
 end

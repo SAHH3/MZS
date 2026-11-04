@@ -60,7 +60,7 @@ if exist(outname,'file')==0
     nccreate(outname,'evals','Dimensions',{'list' Inf}, ...
            'Format','classic');
 
-    % starting position, given in the physical plane and mapped to the unit disc
+    % starting position, given in the physical plane and mapped to the unit circle
     x0 = -4; y0 = 0.995; z0 = x0 + 1i*y0;
     Z0 = inverse_map(z0, domain_var); x0 = real(Z0); y0 = imag(Z0);
     xyvor = [x0; y0];

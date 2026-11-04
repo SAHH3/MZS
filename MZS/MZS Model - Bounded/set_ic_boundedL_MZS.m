@@ -1,5 +1,5 @@
 function [ xyvor ] = set_ic_boundedL_MZS(n, np, eval, eshell, lval, lshell, XY, eps)
-%SET_IC_BOUNDEDL_MZS  Random initial positions in the UNIT DISC with given
+%SET_IC_BOUNDEDL_MZS  Random initial positions in the UNIT CIRCLE with given
 %                     energy and angular momentum.
 %
 %   xyvor = set_ic_boundedL_MZS(n, np, eval, eshell, lval, lshell, XY, eps)
@@ -21,10 +21,10 @@ function [ xyvor ] = set_ic_boundedL_MZS(n, np, eval, eshell, lval, lshell, XY, 
 
     nm=n-np; l=-1e10; hvec=-1e10;
     kappas=[ones(1,np),-ones(1,nm)]';
-    parvec=[kappas;0;0];                 % q = g = 0: unit disc
+    parvec=[kappas;0;0];                 % q = g = 0: unit circle
 
     while (l<lval-0.5*lshell || l>lval+0.5*lshell)    %first fix L
-       rads = sqrt(rand(n,1));           % sqrt gives a uniform density over the disc area
+       rads = sqrt(rand(n,1));           % sqrt gives a uniform density over the unit circle
        l = sum(kappas .* (rads.^2 + 2.*eps .* (XY(1:n).^2 + XY(n+1:2*n).^2 + 2)));
     end
 

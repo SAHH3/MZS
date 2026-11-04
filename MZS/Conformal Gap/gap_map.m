@@ -1,5 +1,5 @@
 function z = gap_map(Z, a)
-%GAP_MAP  The 'gap' conformal map from the unit disc to the physical domain.
+%GAP_MAP  The 'gap' conformal map from the unit circle to the physical domain.
 %
 %   z = gap_map(Z, a)
 %
@@ -7,10 +7,10 @@ function z = gap_map(Z, a)
 %
 %   The physical domain is the whole plane with two straight walls along the
 %   real axis, x <= -1 and x >= 1, leaving a gap -1 < x < 1 between them.
-%   The unit circle maps onto the walls, Z = 0 maps to the centre of the gap,
+%   The boundary |Z| = 1 maps onto the walls, Z = 0 maps to the centre of the gap,
 %   and Z = +1, -1 map to infinity (one on each side of the walls).
 %
-%   The vortex positions are integrated in the image (unit-disc) plane Z;
+%   The vortex positions are integrated in the image (unit-circle) plane Z;
 %   this converts them to physical positions z, e.g. for plotting.
 %
 %   Z  image-plane position(s), |Z| < 1, any array size

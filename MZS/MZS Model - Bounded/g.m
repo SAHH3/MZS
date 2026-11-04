@@ -1,5 +1,5 @@
 function g = g(xy)
-%G  Robin function of the unit disc (regular part of the Green's function at Z' = Z).
+%G  Robin function of the unit circle (regular part of the Green's function at Z' = Z).
 %
 %   g = g(xy)
 %

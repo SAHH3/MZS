@@ -1,12 +1,12 @@
 function GPV = GPV(xy, xyp)
-%GPV  Point-vortex Green's function of the unit disc.
+%GPV  Point-vortex Green's function of the unit circle.
 %
 %   GPV = GPV(xy, xyp)
 %
 %     G(Z, Z') = ( log|Z - Z'|^2 - log|1 - Z conj(Z')|^2 ) / (4 pi)
 %              = log| (Z - Z') / (1 - Z conj(Z')) | / (2 pi)
 %
-%   i.e. a vortex at Z' plus its image at 1/conj(Z'), so that the unit circle
+%   i.e. a vortex at Z' plus its image at 1/conj(Z'), so that the boundary |Z| = 1
 %   is a streamline. Because the map is conformal, G(Z(z), Z(z')) is also
 %   the Green's function of the physical domain. Gives the h2 term of
 %   energy_bounded_MZS.m.

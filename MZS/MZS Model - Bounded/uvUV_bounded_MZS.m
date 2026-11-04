@@ -10,7 +10,7 @@ function [ uvUV ] = uvUV_bounded_MZS( ~, xyXYvor, eps, parvec)
 %     k_i J_i^2 dx_i/dt =  dH/dy_i,    k_i J_i^2 dy_i/dt = -dH/dx_i,
 %     k_i eps_i dX_i/dt =  dH/dY_i,    k_i eps_i dY_i/dt = -dH/dX_i,
 %
-%   where J_i = |F'(Z_i)| and (x_i, y_i) are image-plane (unit-disc) positions.
+%   where J_i = |F'(Z_i)| and (x_i, y_i) are image-plane (unit-circle) positions.
 %
 %   t        time (unused; the equations are autonomous)
 %   xyXYvor  state [x; y; X; Y], 4N x 1 column vector

@@ -1,5 +1,5 @@
 function a = a_complex(z, zp)
-%A_COMPLEX  The image-vortex factor |1 - Z conj(Z')|^2 for the unit disc, complex form.
+%A_COMPLEX  The image-vortex factor |1 - Z conj(Z')|^2 for the unit circle, complex form.
 %
 %   a = a_complex(z, zp)
 %
