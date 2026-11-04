@@ -77,7 +77,7 @@ The parameters are set at the top of each script.
 
 | Script | Folder | Domain | What it does |
 |---|---|---|---|
-| `main_bounded_MZS.m` | Bounded | Heart (`q`, `g`); `q = g = 0` is the unit circle, `g = 0` is the Neumann oval | $N$ vortices from random initial positions with a given energy (and, for the disc, angular momentum) |
+| `main_bounded_MZS.m` | Bounded | Heart (`q`, `g`); `q = g = 0` is the unit circle, `g = 0` is the Neumann oval | $N$ vortices from random initial positions with a given energy (and, for the circle, angular momentum) |
 | `main_gap_MZS.m` | Bounded | Gap | One vortex starting above the wall, moving towards the gap |
 | `Contour_Dynamics_and_MZS.m` | Bounded | Gap | As `main_gap_MZS.m`, then compares the MZS vortex with a contour-dynamics simulation (see below) |
 | `main_doubly_MZS.m` | Doubly Periodic | $[0, 2\pi)^2$ | $N$ vortices, half positive and half negative, from random positions with a given energy |
@@ -88,6 +88,8 @@ folders define functions with the same names (`DF1`–`DF4`, `inverse_map`,
 `jacob`), and whichever folder was added last is used. Always run the scripts
 from their own folder, so that this works and so the model's own functions are
 found first.
+
+You can use this code for a domain of your own choosing, so long as you have a conformal map from the circle to that domain. All you need to do is create a folder similar to `Conformal Heart` and `Conformal Gap`, and create functions which define the map, its inverse, the Jacobian, and the first four derivatives of the map. Then, add the new folder to the path for `main_bounded_MZS.m`, or a copy of this, making sure that the figures plot the new boundary.
 
 ### Output and restarting
 
