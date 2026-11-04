@@ -1,4 +1,4 @@
-# MZS elliptical-vortex model
+# Generalised MZS Vortex Moment Models - Numerical Implementation
 
 MATLAB code for the MZS moment model of two-dimensional vortex dynamics. Each
 vortex is a uniform elliptical patch, described by its centre, its aspect ratio
