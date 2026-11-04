@@ -13,7 +13,7 @@ interaction. Three geometries are included:
 
 Fortran code is also available for Contour Dynamics comparisons.
 
-## Folder layout
+## MZS folder layout
 
 | Folder | Contents |
 |---|---|
