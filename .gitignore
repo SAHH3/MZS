@@ -1,0 +1,17 @@
+# MATLAB autosave files
+*.asv
+
+# MZS model output (NetCDF run files, written in MZS/)
+*.nc
+
+# Movies and saved frames from the plotting scripts
+*.mp4
+figfiles/
+
+# Contour dynamics: run data and build products
+fort.11
+*.o
+*.mod
+Contour Dynamics of Vortex Patch/dyn
+Contour Dynamics of Vortex Patch/patch
+*.exe
