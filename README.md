@@ -175,19 +175,17 @@ equations of the MZS model when the Rossby radius is large.
 
 ### Matching the MZS run in `Contour_Dynamics_and_MZS.m`
 
-For the comparison to be like for like, the contour-dynamics run should
+For the comparison to be like-for-like, the contour-dynamics run should
 describe the same vortex and save at the same times as the MZS run:
 
-- **Same patch.** Use a circular patch of radius $\sqrt{8\varepsilon}$ (0.1
-  for $\varepsilon = 0.00125$), centred at $(-4, 0.997)$, with no background
+- **Same patch.** Use a circular patch of radius $\sqrt{8\varepsilon}$, centred at the same location, with no background
   flows (stream, far-field velocity and flux all zero).
 - **Same vorticity.** The MZS circulation $\kappa = 16\pi^2\varepsilon$ gives
   vorticity $\kappa/(8\pi\varepsilon) = 2\pi$. `patch` asks for the vorticity
   in units of $2\pi$, so this is an input of 1. (`dipole.f90` likewise uses 1
   for a vortex of vorticity $2\pi$.)
 - **Same save times.** Frame $k$ of `fort.11` is compared with MZS step $k$,
-  so the time step times the number of steps per save must equal the MZS `dt`
-  (1 in the script).
+  so the time step times the number of steps per save must equal the MZS `dt`.
 - **Long enough.** Use at least as many saves as MZS steps.
 
 `Contour_Dynamics_and_MZS.m` asks for plot settings at the keyboard. It saves
