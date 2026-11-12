@@ -14,14 +14,13 @@ function H = energy_bounded_MZS(~, xyvor, XY, eps, parvec, varargin)
 %   Below, s_i = sqrt(|X_i|^2 + 4).
 %
 %     H = h1 + h2 + ... + h7, where
-%     h1 = -sum_i k_i^2 log((|X_i|^2 + 4)/4) / (8 pi)       self-energy of each ellipse
-%     h2 = -1/2 sum_{i~=j} k_i k_j G(Z_i, Z_j)              point-vortex interactions (GPV.m)
-%     h3 = -1/2 sum_i k_i^2 g(Z_i)                          interaction with own image (g.m)
-%     h4 = -sum_{i~=j} k_i k_j eps_j s_j GQX(i,j)           ellipticity of j with point vortex i (GQX.m)
-%     h5 = -sum_i k_i^2 eps_i s_i gQX0(i)                   ellipticity of i with own image (gQX0.m)
-%     h6 =  sum_i k_i^2 log|F'(Z_i)| / (4 pi)               conformal-map correction to h3 (jacob.m)
-%     h7 = -sum_i k_i^2 eps_i s_i Re((X_i + i Y_i) C1(Z_i)) / (2 pi)
-%                                                           conformal-map correction to h5 (C1.m)
+%     h1 = -sum_i k_i^2 log((|X_i|^2 + 4)/4) / (8 pi)                       self-energy of each ellipse
+%     h2 = -1/2 sum_{i~=j} k_i k_j G(Z_i, Z_j)                              point-vortex interactions (GPV.m)
+%     h3 = -1/2 sum_i k_i^2 g(Z_i)                                          interaction with own image (g.m)
+%     h4 = -sum_{i~=j} k_i k_j eps_j s_j GQX(i,j)                           ellipticity of j with point vortex i (GQX.m)
+%     h5 = -sum_i k_i^2 eps_i s_i gQX0(i)                                   ellipticity of i with own image (gQX0.m)
+%     h6 =  sum_i k_i^2 log|F'(Z_i)| / (4 pi)                               conformal-map correction to h3 (jacob.m)
+%     h7 = -sum_i k_i^2 eps_i s_i Re((X_i + i Y_i) C1(Z_i)) / (2 pi)        conformal-map correction to h5 (C1.m)
 %
 %   The main scripts group these as self-interaction h1, point vortex
 %   h2+h3+h6 and elliptic h4+h5+h7.

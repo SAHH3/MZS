@@ -4,7 +4,9 @@ function [value, isterminal, direction] = ElongationEvent2(t, x)
 %   As ElongationEvent.m, but with a much larger threshold: |X|^2 =
 %   lambda + 1/lambda - 2 = 25 is aspect ratio lambda of about 27. Used by
 %   the gap runs, where a single vortex is strongly stretched passing
-%   through the gap.
+%   through the gap. This lets the simulation run for longer, to follow the
+%   vortex's evolution further: it stops before the integration breaks down,
+%   rather than when the vortex becomes unstable. Change 25 as you prefer.
 %
 %   t  time (unused)
 %   x  state vector [x; y; X; Y], each block of length N

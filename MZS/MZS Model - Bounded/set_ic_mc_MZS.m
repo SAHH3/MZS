@@ -7,7 +7,6 @@ function [ xyvor ] = set_ic_mc_MZS(n, nvor, emin, XY, eps, parvec)
 %   groups rarely land in the shell. Starts from n random candidate positions
 %   (xyvors.m) and repeatedly tries replacing one vortex with another
 %   candidate, keeping the change only if it raises the energy, until E > emin.
-%   Not called by the main scripts at present.
 %
 %   n        number of vortices
 %   nvor     number of candidate positions to generate

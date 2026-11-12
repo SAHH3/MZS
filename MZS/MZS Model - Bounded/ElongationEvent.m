@@ -4,7 +4,7 @@ function [value, isterminal, direction] = ElongationEvent(t, x)
 %   For use with odeset('Events', @ElongationEvent). With X + iY =
 %   (sqrt(lambda) - 1/sqrt(lambda)) exp(2 i phi), |X|^2 = lambda + 1/lambda - 2,
 %   so |X|^2 = 4/3 is aspect ratio lambda = 3 (the elongation beyond which
-%   an isolated elliptical vortex is unstable).
+%   an isolated elliptical vortex is unstable - Love's criterion for instability).
 %
 %   t  time (unused)
 %   x  state vector [x; y; X; Y], each block of length N

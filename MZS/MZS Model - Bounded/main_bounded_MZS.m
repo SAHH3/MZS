@@ -26,7 +26,7 @@
 %rng('shuffle')                             %random number shuffle
 rng(0)
 addpath('../Conformal Heart/');             %path to select heart
-q = 0.8; g = 0; domain_var = [q; g];        %heart domain parameters (q = g = 0: unit circle)
+q = 0.8; g = 0; domain_var = [q; g];        %heart domain parameters (q = g = 0: unit circle, g = 0: Neumann oval)
 dt = 0.01;                                  %time interval length
 TEND = 2500;                                %number of time steps (run length TEND*dt)
 N = 4; NP = N/2; NM = N-NP;                %vortex number, no. +ve, no.-ve

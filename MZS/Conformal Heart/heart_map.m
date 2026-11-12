@@ -9,7 +9,7 @@ function z = heart_map(Z, domain_var)
 %   this converts them to physical positions z, e.g. for plotting.
 %
 %   Z           image-plane position(s), |Z| < 1, any array size
-%   domain_var  [q, g], the heart shape parameters (q = g = 0 is the unit circle)
+%   domain_var  [q, g], the heart shape parameters (q = g = 0 is the unit circle, g = 0 is the Neumann oval)
 
 q = domain_var(1); g = domain_var(2); a = alpha_heart(q, g, pi);
 

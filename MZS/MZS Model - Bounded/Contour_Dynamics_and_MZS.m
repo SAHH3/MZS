@@ -9,13 +9,21 @@
 % continues from its last saved state, so delete it to start afresh.
 %
 % Part 2 reads a contour-dynamics simulation of the same vortex patch from
-% the text file fort.11, output by a separate contour-dynamics code that is
-% NOT included here. For each frame it computes the patch's area, centroid,
-% aspect ratio and orientation from its boundary contour, and plots the
-% contour together with the MZS ellipse at the same frame. The frames are
-% saved as PNGs in ./figfiles, optionally as a movie, followed by time series
-% of both models. The script asks for the plot settings at the keyboard.
-% It assumes frame k of fort.11 is at the same time as MZS step k (both saved every dt).
+% the text file fort.11 (in the current folder), made by the Fortran code in
+% the 'Contour Dynamics of Vortex Patch' folder (see the README). It is
+% adapted from mkmovie_v7.m in that folder. For each frame it computes the
+% patch's area, centroid, aspect ratio and orientation from its boundary
+% contour, and plots the contour together with the MZS ellipse at the same
+% frame. The frames are saved as PNGs in ./figfiles, optionally as a movie,
+% followed by time series of both models. The script asks for the plot
+% settings at the keyboard.
+%
+% The two models describe the same vortex because kappa = 16 pi^2 eps gives
+% vorticity kappa/area = 2 pi, so set the patch vorticity omega = 2 pi in the
+% contour-dynamics run (patch asks for it in units of 2 pi, so enter 1).
+% The script also assumes frame k of fort.11 is at the
+% same time as MZS step k, i.e. that the contour-dynamics run saves a frame
+% every dt (its time step times its number of steps per save equals dt).
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -139,10 +147,17 @@ x_list = zeros(1,TEND); y_list = zeros(1,TEND);   % MZS track in the physical pl
 %   July 2011: no printing - much faster
 %              sensible defaults
 %              calculation of area, centroid, orientation and aspect ratio
-    
+%   (header of mkmovie_v7.m, which this part is adapted from)
+%
+%   Layout of fort.11: 3 header lines of run parameters, then for each saved frame
+%     1 row       [n, npt, t]           number of contours, total nodes, time
+%     n rows      [np, mb, ind, om]     nodes in, offset of, level and vorticity of each contour
+%     1 row       [xloc, yloc]          centroid of the patch
+%     npt rows    [x, y, corner]        node positions
+
 datafile = input('CD data file (default = fort.11)  ','s');
 if isempty(datafile)
-      datafile = 'fort.11'; 
+      datafile = 'fort.11';
 end
 numhead = 3;  % ignore these header lines
 cdata  = readmatrix ('fort.11', 'FileType', 'text', 'NumHeaderLines', numhead);

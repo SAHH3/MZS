@@ -90,7 +90,7 @@ if exist(outname,'file')==0
     end
     xyfull=xyvor0;
 
-    % energy, split into its terms [h1, h2, h3, h4, H] (see energy_doubly_MZS.m)
+    % energy, split into its terms [h1, h2 + h5, h3, h4, H] (see energy_doubly_MZS.m)
     %h0 = energy_doubly_MZS(0, xyvor0, XYvor0, eps, parvec);
     h0_list = energy_doubly_MZS(0, xyvor0, XYvor0, eps, parvec, 1)
     h0 = h0_list(5);                               % initial energy
@@ -187,6 +187,7 @@ max(abs(evals-h0))
 % (switch each plot on or off with 1==1 / 1==0)
 
 % Plot of energy change in each term of H
+% columns of h_list: self-interaction h1, point vortex h2 + h5, elliptic h3, total H
 % (h4 is left out: it is zero for a neutral gas)
 if 1==1
     hold on
